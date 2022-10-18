@@ -3,27 +3,27 @@ version: "3.8"
 
 # add the serivces needed (postgres,go)
 services:
-  postgres:
-    build: 
-      context: ./database          
-    container_name: postgres
-    image: anil2/postgres_v_01:postgres_V_1.0
-    #image : server/db:postgres
-    restart: always
-    environment:
-      POSTGRES_USER: postgres
-      #POSTGRES_PASSWORD: 1234567890
-      POSTGRES_PASSWORD: anil123456
-      # Optional: Give a name to the database, otherwise
-      # use the default value POSTGRES_USER as a database name (user in this case.)
-      POSTGRES_DB: server_project9
-    ports:
-      - "5432:5432"
-    #volumes: 
-      #- dbdata:/var/lib/postgresql/data
-      # - ./db/init.sql:/docker-entrypoint-initdb.d/create_tables.sql    
-    networks:
-      - default
+  # postgres:
+  #   build: 
+  #     context: ./database          
+  #   container_name: postgres
+  #   image: anil2/postgres_v_01:postgres_V_1.0
+  #   #image : server/db:postgres
+  #   restart: always
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     #POSTGRES_PASSWORD: 1234567890
+  #     POSTGRES_PASSWORD: anil123456
+  #     # Optional: Give a name to the database, otherwise
+  #     # use the default value POSTGRES_USER as a database name (user in this case.)
+  #     POSTGRES_DB: server_project9
+  #   ports:
+  #     - "5432:5432"
+  #   #volumes: 
+  #     #- dbdata:/var/lib/postgresql/data
+  #     # - ./db/init.sql:/docker-entrypoint-initdb.d/create_tables.sql    
+  #   networks:
+  #     - default
 
   go:
     container_name: go
@@ -32,8 +32,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    depends_on:
-      - "postgres"
+    # depends_on:
+    #   - "postgres"
     restart: always
     ports:
       - "5002:5002"
