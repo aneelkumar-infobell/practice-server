@@ -16,7 +16,7 @@ services:
       POSTGRES_PASSWORD: anil123456
       # Optional: Give a name to the database, otherwise
       # use the default value POSTGRES_USER as a database name (user in this case.)
-      POSTGRES_DB: server_project
+      POSTGRES_DB: server_project9
     ports:
       - "5432:5432"
     #volumes: 
