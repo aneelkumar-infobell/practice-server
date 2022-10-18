@@ -44,7 +44,7 @@ services:
       #dbdata: 
       # create the volume for persisting data.
   node_n:
-    build: ./Server-UI-main
+    build: ./Server-UI
     image: anil2/ui:react
     container_name: node_n
     
