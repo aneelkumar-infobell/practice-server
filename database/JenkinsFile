@@ -1,0 +1,12 @@
+pipeline {
+ 
+  agent any
+
+  stages {
+    stage('check') {
+      steps {
+        bat 'go run main.go'
+      }
+    }
+  }
+}
