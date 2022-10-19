@@ -32,15 +32,15 @@ pipeline {
     }
     stage ('creating pods and service ') {
       steps {
-      //  bat 'kubectl delete deploy --all'
-       // bat 'kubectl create deploy api --image=anil2/golang-api:api_V_1.0'
+       bat 'kubectl delete deploy --all'
+       bat 'kubectl create deploy api --image=anil2/golang-api:api_V_1.0'
         bat 'kubectl get deploy'
         bat 'kubectl get pods'
         bat 'kubectl port-forward  api-cf7b99fff-wc8t7 5002:5002
 '
 
 
-        bat 'kubectl create ui --image=anil2/ui:react
+        // bat 'kubectl create ui --image=anil2/ui:react
 
 
       }
