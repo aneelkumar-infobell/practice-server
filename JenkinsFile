@@ -34,6 +34,7 @@ pipeline {
       steps {
         bat 'kubectl create deploy api --image=anil2/golang-api:api_V_1.0'
         bat 'kubectl get deploy'
+        bat 'kubectl get pods'
       }
     }
   }
