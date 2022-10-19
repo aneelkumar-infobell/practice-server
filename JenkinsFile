@@ -23,7 +23,17 @@ pipeline {
     }
     stage("kubernets") {
       steps {
+        
         bat 'minikube start'
+        bat 'kubectl get deploy'
+        bat 'kubectl get pods'
+        bat 'kubectl get svc'
+      }
+    }
+    stage ('creating pods and service ') {
+      steps {
+        bat 'kubectl create deploy api --image=anil2/golang-api:api_V_1.0'
+        bat 'kubectl get deploy'
       }
     }
   }
