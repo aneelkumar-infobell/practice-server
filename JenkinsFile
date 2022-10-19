@@ -21,6 +21,11 @@ pipeline {
         bat 'docker compose ps'
       }
     }
+    stage("kubernets") {
+      steps {
+        bat 'minikube start'
+      }
+    }
   }
 //   post {
 //     always {
